@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './App.css';
 import logo from './logo.svg';
 
-function App() {
+function AppARIA() {
   const SIGN_IN = 'SIGN_IN';
   const SIGN_UP = 'SIGN_UP';
   const [activePanel, setActivePanel] = useState(SIGN_IN);
@@ -41,14 +41,14 @@ function App() {
     const selectedClass = 'tab--item__selected';
     const isSelected = (tab) => activePanel === tab;
 
-    function handleKeyPress(event, panelToActivate) {
+    function handleKeyDown(event, panelToActivate) {
       if (event.which === KEY_ENTER) {
         setActivePanel(panelToActivate);
       }
     }
 
     return (
-      <ul role="tablist" aria-label="Log in tab list" className="tab--list">
+      <ul role="tablist" aria-label="Log in tab list with options" className="tab--list">
           <li
             id="sign_in--tab"
             role="tab"
@@ -61,7 +61,7 @@ function App() {
               ${activePanel === SIGN_IN ? selectedClass : ''}
             `}
             onClick={() => setActivePanel(SIGN_IN)}
-            onKeyPress={(e) => handleKeyPress(e, SIGN_IN)}
+            onKeyDown={(e) => handleKeyDown(e, SIGN_IN)}
           >
             Sign In
           </li>
@@ -77,7 +77,7 @@ function App() {
               ${activePanel === SIGN_UP ? selectedClass : ''}
             `}
             onClick={() => setActivePanel(SIGN_UP)}
-            onKeyPress={(e) => handleKeyPress(e, SIGN_UP)}
+            onKeyDown={(e) => handleKeyDown(e, SIGN_UP)}
           >
             Sign Up
           </li>
@@ -88,7 +88,7 @@ function App() {
   const SignIn = () => {
     return (
       <div 
-        id="sign_up--panel" 
+        id="sign_in--panel" 
         className="form--container" 
         role="tabpanel"
         aria-label="Sign in form"
@@ -98,7 +98,10 @@ function App() {
           <input className="form--input" type="text" name="email" id="email" placeholder="foo@bar.com" />
           <label className="form--label" htmlFor="password">Password</label>
           <input className="form--input" type="password" name="password" id="password" />
-          <button className="form--button">Sign In</button>
+          <button 
+            className="form--button"
+            aria-label="Click to submit the Sign In form"
+          >Sign In</button>
         </form>
       </div>
     );
@@ -107,7 +110,7 @@ function App() {
   const SignUp = () => {
     return (
       <div 
-        id="sign_in--panel" 
+        id="sign_up--panel" 
         className="form--container" 
         role="tabpanel"
         aria-label="Sign up form"
@@ -119,7 +122,10 @@ function App() {
           <input className="form--input" type="password" name="password" id="password" />
           <label className="form--label" htmlFor="confirmPassword">Confirm password</label>
           <input className="form--input" type="password" name="confirmPassword" id="confirmPassword" />
-          <button className="form--button">Sign Up</button>
+          <button 
+            className="form--button"
+            aria-label="Click to submit the Sign Up form"
+          >Sign Up</button>
         </form>
       </div>
     );
@@ -140,4 +146,4 @@ function App() {
   );
 }
 
-export default App;
+export default AppARIA;

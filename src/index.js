@@ -1,12 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
+
+import AppNonSemantic from './AppNonSemantic';
+import AppSemanticHTML from './AppSemanticHTML';
+import AppARIA from './AppARIA';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <AppARIA />
   </React.StrictMode>,
   document.getElementById('root')
 );
