@@ -1,8 +1,30 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen, fireEvent } from '@testing-library/react';
 import App from './App';
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
-});
+describe('App', () => {
+  describe('Tabs', () => {
+    let componentUnderTest;
+
+    beforeEach(() => {
+      componentUnderTest = render(<App />)
+    })
+
+    afterEach(() => {
+      componentUnderTest.unmount();
+    })
+
+    const getSelectedTab = () => {
+      return screen.getByRole('tab', { selected: true })
+    }
+
+    it('should have the sign in tab selected by default', () => {
+      expect(getSelectedTab().textContent).toBe('Sign In')
+    })
+  
+    it('should select sign up tab on click', () => {
+      const signUpTab = screen.getByLabelText('Sign up tab item')
+      fireEvent.click(signUpTab)
+      expect(getSelectedTab().textContent).toBe('Sign Up')
+    })
+  })
+})
