@@ -49,7 +49,6 @@ function AppSemanticHTML() {
             onClick={() => setActivePanel(SIGN_IN)}
           >Sign In</li>
           <li
-            data-test-id="sign_up--tab"
             className={`
               tab--item 
               ${activePanel === SIGN_UP ? selectedClass : ''}

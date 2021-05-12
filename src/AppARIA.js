@@ -20,16 +20,31 @@ function AppARIA() {
 
   const Nav = () => {
     return (
-      <nav aria-label="Main navigation">
+      <nav className="nav--container" aria-label="Main navigation">
         <ul className="nav--list">
           <li className="nav--item">
-            <a className="nav--link" href="/blog">Blog</a>
+            <a 
+              className="nav--link" 
+              href="/blog"
+              data-test-id="blog_link"
+              aria-label="Blog, Visit our engineering blog"
+              >Blog</a>
           </li>
           <li className="nav--item">
-            <a className="nav--link" href="/blog">Jobs</a>
+            <a 
+              className="nav--link" 
+              href="/jobs"
+              data-test-id="jobs_link"
+              aria-label="Jobs, See our open positions and be part of our team"
+              >Jobs</a>
           </li>
           <li className="nav--item">
-            <a className="nav--link" href="/blog">Contact us</a>
+            <a 
+              className="nav--link" 
+              href="/contact-us"
+              data-test-id="contact_us_link"
+              aria-label="Contact us, Get in touch with us"
+            >Contact us</a>
           </li>
         </ul>
       </nav>
@@ -56,6 +71,7 @@ function AppARIA() {
             aria-selected={isSelected(SIGN_IN)}
             aria-label="Sign in tab item"
             tabIndex="0"
+            data-test-id="sign_in_tab"
             className={`
               tab--item 
               ${activePanel === SIGN_IN ? selectedClass : ''}
@@ -72,6 +88,7 @@ function AppARIA() {
             aria-selected={isSelected(SIGN_UP)}
             aria-label="Sign up tab item"
             tabIndex="0"
+            data-test-id="sign_up_tab"
             className={`
               tab--item 
               ${activePanel === SIGN_UP ? selectedClass : ''}
@@ -100,6 +117,7 @@ function AppARIA() {
           <input className="form--input" type="password" name="password" id="password" />
           <button 
             className="form--button"
+            type="submit"
             aria-label="Click to submit the Sign In form"
           >Sign In</button>
         </form>
@@ -108,6 +126,10 @@ function AppARIA() {
   }
 
   const SignUp = () => {
+    function handleSignUp() {
+
+    }
+    
     return (
       <div 
         id="sign_up--panel" 
@@ -115,7 +137,7 @@ function AppARIA() {
         role="tabpanel"
         aria-label="Sign up form"
       >
-        <form>
+        <form onSubmit={() => handleSignUp()}>
           <label className="form--label" htmlFor="email">E-mail</label>
           <input className="form--input" type="text" name="email" id="email" placeholder="foo@bar.com" />
           <label className="form--label" htmlFor="password">Password</label>
@@ -124,6 +146,7 @@ function AppARIA() {
           <input className="form--input" type="password" name="confirmPassword" id="confirmPassword" />
           <button 
             className="form--button"
+            type="submit"
             aria-label="Click to submit the Sign Up form"
           >Sign Up</button>
         </form>
