@@ -11,7 +11,8 @@ function AppSemanticHTML() {
     return (
       <header>
         <figure>
-          <img className="logo" src={logo} alt="Company logo"/>
+          <img className="header--logo" src={logo} alt="Company logo"/>
+          <h1 className="header--title">Example with Semantic HTML</h1>
         </figure>
         <Nav />
       </header>

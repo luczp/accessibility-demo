@@ -5,15 +5,23 @@
   flex-direction: column;
 }
 
-.logo {
+.header--logo {
   display: block;
   margin: 0 auto;
   height: 20vmin;
   pointer-events: none;
 }
 
+.header--title {
+  text-align: center;
+  font-size: 24px;
+  padding: 20px 0;
+  margin: 0;
+  color: white;
+}
+
 @media (prefers-reduced-motion: no-preference) {
-  .logo {
+  .header--logo {
     animation: logo-spin infinite 20s linear;
   }
 }
@@ -34,7 +42,7 @@
   flex-direction: row;
   align-content: center;
   justify-content: space-evenly;
-  padding: 0;
+  padding: 20px 0;
   margin: 0;
 }
 
@@ -47,7 +55,7 @@
 }
 
 .tab--container {
-  margin: 70px 0 0 0;
+  margin: 20px 0 0 0;
   width: 500px;
   height: 500px;
   border-radius: 1em;

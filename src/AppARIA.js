@@ -11,8 +11,9 @@ function AppARIA() {
     return (
       <header>
         <figure aria-label="The company logo">
-          <img className="logo" src={logo} alt="Company logo"/>
+          <img className="header--logo" src={logo} alt="Company logo"/>
         </figure>
+        <h1 className="header--title">Example with ARIA Attributes</h1>
         <Nav />
       </header>
     );

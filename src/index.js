@@ -2,14 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-
-import AppNonSemantic from './AppNonSemantic';
-import AppSemanticHTML from './AppSemanticHTML';
-import AppARIA from './AppARIA';
+import Router from './Router';
 
 ReactDOM.render(
   <React.StrictMode>
-    <AppARIA />
+    <Router />
   </React.StrictMode>,
   document.getElementById('root')
 );

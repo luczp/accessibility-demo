@@ -14,7 +14,7 @@ describe('App', () => {
 
   describe('Header', () => {
     it('should have a logo', () => {
-      const logo = componentUnderTest.find('.logo')
+      const logo = componentUnderTest.find('.header--logo')
       expect(logo.length).toBe(1)
     })
 

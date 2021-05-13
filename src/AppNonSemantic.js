@@ -10,7 +10,8 @@ function AppNonSemantic() {
   const Header = () => {
     return (
       <div>
-        <img className="logo" src={logo} />
+        <img className="header--logo" src={logo} />
+        <h1 className="header--title">Example with No Semantics</h1>
         <Nav />
       </div>
     );
