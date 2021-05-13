@@ -1,4 +1,5 @@
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import AppARIA from './AppARIA';
 
 describe('App', () => {
@@ -55,13 +56,13 @@ describe('App', () => {
   
     it('should select sign up tab on click', () => {
       const signUpTab = screen.getByLabelText('Sign up tab item')
-      fireEvent.click(signUpTab)
+      userEvent.click(signUpTab)
       expect(getSelectedTab().textContent).toMatch(/sign up/i)
     })
 
     it('should select sign in tab on click', () => {
       const signInTab = screen.getByLabelText('Sign in tab item')
-      fireEvent.click(signInTab)
+      userEvent.click(signInTab)
       expect(getSelectedTab().textContent).toMatch(/sign in/i)
     })
   })
