@@ -69,3 +69,5 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 # accessibility-demo
+
+This is a demonstration of how Enzyme and React Testing Library can work together in the same project. It also aims to showcase how teams can migrate from Enzyme to React Testing Library.
